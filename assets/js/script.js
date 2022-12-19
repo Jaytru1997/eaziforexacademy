@@ -2,8 +2,19 @@ document.addEventListener('DOMContentLoaded', function() {
     initNav();
     closeNav();
     openNav();
+    navLinkClose();
 
-})
+});
+
+function navLinkClose() {
+    const navlinks = document.querySelectorAll('.mobilelink');
+    navlinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const mobilemenu = document.querySelector('.mobilenav');
+            mobilemenu.style.display = 'none';
+        })
+    })
+}
 
 function closeNav() {
     const closebtn = document.querySelector('.close-icon');

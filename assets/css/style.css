@@ -232,10 +232,7 @@ content: 'ACTIVE';
     }
 
     .mobilenav {
-        background: url(../img/annie-spratt-QckxruozjRg-unsplash.jpg);
-        background-position: top center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-color: rgba(255, 255, 255, 0.952);
 
         position: absolute;
         z-index: 100;
@@ -261,11 +258,10 @@ content: 'ACTIVE';
     }
 
     .mobilelist > a {
-        color: var(--white);
+        color: var(--black);
     }
 
     .close-icon {
-        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(177deg) brightness(112%) contrast(101%);
         margin: 1rem 1rem 0rem 1rem;
         width: 1rem;
     }
