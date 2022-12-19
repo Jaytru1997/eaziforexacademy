@@ -1,0 +1,806 @@
+@import url(./responsive.css);
+@import url(./utility.css);
+@import url(./animation.css);
+
+
+.main {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--light);
+}
+
+
+/*
+--------------------------------------------------
+------------------- REG SWITCH -------------------
+--------------------------------------------------
+*/
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 10rem;
+    height: 3.4rem;
+}
+
+.switch input {
+display: none;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #3C3C3C;
+-webkit-transition: .4s;
+transition: .4s;
+border-radius: 3.4rem;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 2rem;
+width: 2rem;
+left: -0.7rem;
+bottom: 0.8rem;
+background-color: white;
+-webkit-transition: .4s;
+transition: .4s;
+border-radius: 50%;
+}
+
+input:checked + .slider {
+background-color: #0E6EB8;
+}
+
+input:focus + .slider {
+box-shadow: 0 0 0.1rem #2196F3;
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(2.6rem);
+-ms-transform: translateX(2.6rem);
+transform: translateX(8.5rem);
+}
+
+input:not(:checked) + .slider:before {
+    left: 0.4rem;
+}
+
+.slider:after {
+content: 'EXPIRED';
+color: white;
+display: block;
+position: absolute;
+transform: translate(-50%,-50%);
+top: 50%;
+left: 50%;
+font-size: 1rem;
+}
+
+input:checked + .slider:after {
+content: 'ACTIVE';
+}
+
+.hero-title > div > p {
+    color: var(--light);
+}
+
+
+/*
+--------------------------------------------------
+----------------- ABOUT SECTION ------------------
+--------------------------------------------------
+*/
+
+.about {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 10rem;
+}
+
+.about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.about-link {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    color: var(--white);
+    border: none;
+}
+
+.about-link-arrow {
+    width: 2rem;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(177deg) brightness(112%) contrast(101%);
+}
+
+
+/* .advert {
+    display: grid;
+    width: 100%;
+    gap: 2rem;
+    margin-top: 10rem;
+    grid-template-columns: 60% 40%;
+    align-items: center;
+    justify-content: center;
+}
+
+.advert-large {
+    width: 100%;
+    height: 61rem;
+    border-radius: 4rem;
+}
+
+.advert-small {
+    width: 100%;
+    height: 61rem;
+    border-radius: 4rem;
+} */
+
+
+
+/*
+--------------------------------------------------
+------------------ PHONE SCREEN ------------------
+--------------------------------------------------
+*/
+
+@media only screen and (max-width: 768px) {
+    .bg-text {
+        display: none;
+    }
+    
+    .first-text {
+        display: none;
+    }
+    
+    .second-text {
+        display: none;
+    }
+    
+    .navbar {
+        display: none;
+    }
+    
+    .navitem {
+        display: none;
+    }
+    
+    .navlogo {
+        display: none;
+    }
+    
+    .navlogo > img{
+        display: none;
+        width: 15rem;
+    }
+    
+    .navbtns {
+        display: none;
+    }
+    
+    .navbtn {
+        display: none;
+    }
+
+    .mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -5rem;
+    }
+
+    .mobile-logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobilelogo > img {
+        width: 10rem;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.5rem;
+    }
+
+    .line {
+        width: 2rem;
+        border: 1px solid var(--white);
+    }
+
+    .mobilenav {
+        background: url(../img/annie-spratt-QckxruozjRg-unsplash.jpg);
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        position: absolute;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        filter: brightness(0.9) opacity(1);
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 9rem;
+    }
+    
+    .mobilelist {
+        display: flex;
+        height: 50vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        list-style-type: none;
+        color: var(--white);
+    }
+
+    .mobilelist > a {
+        color: var(--white);
+    }
+
+    .close-icon {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(177deg) brightness(112%) contrast(101%);
+        margin: 1rem 1rem 0rem 1rem;
+        width: 1rem;
+    }
+
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .hero-left {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hero-right {
+        display: none;
+    }
+
+    .timer {
+        margin-top: 1rem;
+    }
+
+    .herobtns {
+        display: inline-flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .regbtn {
+        text-decoration: none;
+        color: var(--white);
+        padding: 1rem 3rem;
+        border-radius: 2rem;
+        border: 1px solid var(--white);
+        font-size: 1.2rem;
+    }
+
+    .reg-text {
+        font-size: 2rem;
+    }
+
+    .svg-phone {
+        display: none;
+    }
+
+    .services {
+        margin-top: 10rem;
+        background: url(../img/kanchanara-7gZ3FJ0H51E-unsplash.jpg);
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        height: 40rem;
+        max-height: 40rem;
+        border-radius: 1rem;
+        
+    }
+    
+    .cover {
+        background-color: rgba(0, 0, 0, 0.651);
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        display: flex;
+        justify-content: center;
+        padding-right: 0rem;
+        align-items: center;
+    }
+    
+    .services-content {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    
+    .services-list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .list-check-icon {
+        display: inline;
+        width: 1rem;
+        filter: invert(64%) sepia(47%) saturate(4962%) hue-rotate(80deg) brightness(118%) contrast(123%);
+    }
+    
+    .services-link {
+        text-decoration: none;
+        color: var(--white);
+        padding: 1rem 0rem;
+        border-radius: 2rem;
+        border: 1px solid var(--white);
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .live-trading {
+        margin-top: 10rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .live-content {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    
+    .live-title {
+        font-size: 3rem;
+    }
+    
+    .live-text {
+        font-size: 1.7rem;
+        color: var(--light);
+    }
+
+    .live-image {
+        justify-self: start;
+        width: 100%;
+        border-radius: 4rem;
+    }
+
+    .footer {
+        margin-top: 10rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo {
+        width: 20rem;
+        margin-bottom: 1rem;
+        justify-self: center;
+        align-self: center
+    }
+
+    .vision-text {
+        font-size: 2.5rem;
+    }
+
+    .footer-icons {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .footer-icon {
+        width: 2rem;
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(177deg) brightness(112%) contrast(101%);
+    }
+
+}
+
+/*
+--------------------------------------------------
+------------------ TABLET SCREEN -----------------
+--------------------------------------------------
+*/
+/* @media only screen and (min-width:768px), (max-width: 992px)  {
+    .bg-text {
+        font-family: 'zona_proextrabold';
+        font-weight: 900;
+        margin-top: 15rem;
+        filter: brightness(0.1);
+        position: absolute;
+        top: 60%;
+        left: 43%;
+        transform: translate(-50%,-50%);
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        column-gap: 35rem;
+        row-gap: 15rem;
+        z-index: -100;
+        color: var(--white);
+        height: 100vh;
+        letter-spacing: 2.5rem;
+    }
+    
+    .first-text {
+        grid-column: 1/span1;
+        grid-row: 1/span1;
+        font-size: 30rem;
+    }
+    
+    .second-text {
+        grid-column: 2/span1;
+        grid-row: 2/span1;
+        font-size: 30rem;
+    }
+    
+    .navbar {
+        display: flex;
+        width: 100vw;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 0rem 4rem;
+        background-color: transparent;
+    }
+    
+    .navlist {
+        list-style-type: none;
+        font-size: 2rem;
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+        gap: 1rem;
+        color: var(--light);
+    }
+    
+    .navlogo {
+        display: flex;
+        flex-grow: 2;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .navlogo > img{
+        width: 15rem;
+    }
+    
+    .navbtns {
+        display: flex;
+        flex-direction: row;
+        margin-top: 2rem;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 1rem;
+    }
+    
+    .navbtn {
+        text-decoration: none;
+        color: var(--white);
+        padding: 1rem 3rem;
+        border-radius: 2rem;
+        border: 1px solid var(--white);
+        font-size: 1.2rem;
+    
+    }
+
+    .hero-section {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hero-left {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        z-index: 80;
+        padding-right: 10rem;
+    }
+
+    .hero-right {
+        grid-column: 2/span1;
+        grid-row: 1/span1;
+        justify-self: flex-end;
+    }
+
+    .timer {
+        margin-top: 1rem;
+    }
+
+    .svg-phone {
+        margin-left: 50%;
+        height: 50rem;
+        animation: bounce 4s ease infinite;
+        animation-fill-mode: both;
+    }
+
+} */
+
+/*
+--------------------------------------------------
+----------------- DESKTOP SCREEN -----------------
+--------------------------------------------------
+*/
+@media only screen and (min-width: 768px)  {
+    .bg-text {
+        font-family: 'zona_proextrabold';
+        font-weight: 900;
+        margin-top: 15rem;
+        filter: brightness(0.1);
+        position: absolute;
+        top: 50%;
+        left: 43%;
+        transform: translate(-50%,-50%);
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        column-gap: 35rem;
+        row-gap: 15rem;
+        z-index: -100;
+        color: var(--white);
+        height: 100vh;
+        letter-spacing: 2.5rem;
+    }
+    
+    .first-text {
+        grid-column: 1/span1;
+        grid-row: 1/span1;
+        font-size: 30rem;
+    }
+    
+    .second-text {
+        grid-column: 2/span1;
+        grid-row: 2/span1;
+        font-size: 30rem;
+    }
+    
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        margin: 0rem 7rem;
+        background-color: transparent;
+    }
+    
+    .navlist {
+        list-style-type: none;
+        font-size: 2rem;
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+        gap: 1rem;
+        color: var(--light);
+    }
+    
+    .navlogo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .navlogo > img{
+        width: 15rem;
+    }
+    
+    .navbtns {
+        display: flex;
+        flex-direction: row;
+        margin-top: 2rem;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 1rem;
+    }
+    
+    .navbtn {
+        text-decoration: none;
+        color: var(--white);
+        padding: 1rem 3rem;
+        border-radius: 2rem;
+        border: 1px solid var(--white);
+        font-size: 1.2rem;
+    
+    }
+
+    .hero-section {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-left {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hero-right {
+        justify-self: flex-end;
+    }
+
+    .timer {
+        margin-top: 1rem;
+    }
+
+    .regbtn {
+        display: none;
+    }
+
+    .svg-phone {
+        height: 50rem;
+        animation: bounce 4s ease infinite;
+        animation-fill-mode: both;
+    }
+
+    .services {
+        margin-top: 10rem;
+        background: url(../img/kanchanara-7gZ3FJ0H51E-unsplash.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        height: 60rem;
+        max-height: 60rem;
+        border-radius: 4rem;
+        
+    }
+    
+    .cover {
+        background-color: rgba(0, 0, 0, 0.651);
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        display: flex;
+        justify-content: end;
+        padding-right: 8rem;
+        align-items: center;
+    }
+    
+    .services-content {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    
+    .services-list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .list-check-icon {
+        display: inline;
+        width: 1rem;
+        filter: invert(64%) sepia(47%) saturate(4962%) hue-rotate(80deg) brightness(118%) contrast(123%);
+    }
+    
+    .services-link {
+        text-decoration: none;
+        color: var(--white);
+        padding: 1rem 0rem;
+        border-radius: 2rem;
+        border: 1px solid var(--white);
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .live-trading {
+        margin-top: 10rem;
+        display: flex;
+        gap: 5rem;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .live-content {
+        display: flex;
+        flex-direction: column;
+        padding-right: 20rem;
+        gap: 4rem;
+    }
+    
+    .live-title {
+        font-size: 3rem;
+    }
+    
+    .live-text {
+        font-size: 1.7rem;
+        color: var(--light);
+    }
+
+    .live-image {
+        justify-self: start;
+        width: 40rem;
+        border-radius: 4rem;
+    }
+
+    .footer {
+        margin-top: 10rem;
+        display: flex;
+        gap: 5rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-content {
+        display: flex;
+        padding: 0rem 40rem 0rem 0rem;
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .footer-logo {
+        width: 20rem;
+        margin-bottom: 1rem;
+        justify-self: center;
+        align-self: center
+    }
+
+    .vision-text {
+        font-size: 3.5rem;
+    }
+
+    .footer-text {
+        font-size: 1.7rem;
+        color: var(--light);
+    }
+
+    .footer-icons {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .footer-icon {
+        width: 3rem;
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(177deg) brightness(112%) contrast(101%);
+    }
+
+
+}
