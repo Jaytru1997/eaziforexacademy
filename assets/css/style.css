@@ -422,9 +422,31 @@ content: 'ACTIVE';
 
     .footer-icons {
         display: flex;
+        flex-direction: column;
         align-items: center;
         gap: 2rem;
     }
+
+    .socials {
+        display: inline-flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .venue {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 1px solid var(--white);
+        padding-top: 2rem;
+        gap: 2rem;
+    }
+
+    .venue-text {
+        font-size: 2rem;
+        text-align: center;
+    }
+
 
     .footer-icon {
         width: 2rem;
@@ -759,16 +781,16 @@ content: 'ACTIVE';
     .footer {
         margin-top: 10rem;
         display: flex;
-        gap: 5rem;
-        justify-content: center;
+        gap: 0rem;
+        justify-content: space-between;
         align-items: center;
     }
 
     .footer-content {
         display: flex;
+        flex-direction: column;
         padding: 0rem 40rem 0rem 0rem;
         height: 100%;
-        flex-direction: column;
     }
 
     .footer-logo {
@@ -789,8 +811,25 @@ content: 'ACTIVE';
 
     .footer-icons {
         display: flex;
+        flex-direction: column;
         align-items: center;
+        gap: 1rem;
+    }
+
+    .socials {
+        display: inline-flex;
+        flex-direction: row;
         gap: 2rem;
+    }
+
+    .venue {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .venue-text {
+        font-size: 2rem;
     }
 
     .footer-icon {
